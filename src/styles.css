@@ -1,0 +1,86 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #4CAF50; /* Fresh Green */
+  --secondary-color: #FF9800; /* Vibrant Orange */
+  --accent-color: #8BC34A; /* Light Green */
+  --text-dark: #333333;
+  --text-light: #7A7A7A;
+  --bg-color: #FAFAFA;
+  --white: #FFFFFF;
+  --border-color: #EAEAEA;
+  --font-primary: 'Baloo 2', cursive;
+  --font-secondary: 'Raleway', sans-serif;
+  --border-radius: 12px;
+  --border-radius-lg: 24px;
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-secondary);
+  color: var(--text-dark);
+  background-color: var(--bg-color);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: var(--border-radius);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Base button styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 32px;
+  border-radius: 30px;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--text-dark);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(253, 197, 99, 0.4);
+}

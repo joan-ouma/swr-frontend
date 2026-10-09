@@ -1,0 +1,76 @@
+<div class="breadcrumb">
+  <div class="container">
+    <h1>Shop Detail</h1>
+    <div class="links">
+      <a routerLink="/">Home</a> / <span>Shop Detail</span>
+    </div>
+  </div>
+</div>
+
+<section class="product-single">
+  <div class="container">
+    <div class="product-single-grid" *ngIf="product">
+      <div class="image-gallery">
+        <div class="main-image-block glass">
+          <img [src]="product.image" [alt]="product.name" class="main-image" />
+        </div>
+        <div class="thumbnails">
+          <div class="thumb-block glass" *ngFor="let img of product.gallery">
+            <img [src]="img" alt="Thumbnail" />
+          </div>
+        </div>
+      </div>
+      
+      <div class="product-details">
+        <h2 class="product-title">{{ product.name }}</h2>
+        <div class="price-block">
+          <span class="old-price" *ngIf="product.oldPrice">${{ product.oldPrice.toFixed(2) }} USD</span>
+          <span class="price">${{ product.price.toFixed(2) }} USD</span>
+        </div>
+        <p class="description">{{ product.description }}</p>
+        
+        <div class="add-to-cart-form">
+          <div class="quantity-wrap">
+            <label>Quantity</label>
+            <input type="number" [value]="quantity" min="1" class="quantity-input" />
+          </div>
+          <button class="btn">Add to Cart</button>
+        </div>
+
+        <div class="tabs">
+          <div class="tab-menu">
+            <button [class.active]="activeTab === 'info'" (click)="setTab('info')">Info</button>
+            <button [class.active]="activeTab === 'description'" (click)="setTab('description')">Description</button>
+          </div>
+          <div class="tab-content" *ngIf="activeTab === 'info'">
+            <ul>
+              <li>100% Certified Organic.</li>
+              <li>Locally grown on fair-trade farms.</li>
+              <li>Rich in potassium and essential vitamins.</li>
+              <li>Delivered fresh to your door.</li>
+            </ul>
+          </div>
+          <div class="tab-content" *ngIf="activeTab === 'description'">
+            <p>Introducing our Organic Bananas, the perfect healthy snack for any time of the day. Hand-picked at the peak of ripeness to ensure maximum flavor and nutrition.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="container">
+    <h2>Client Reviews</h2>
+    <div class="reviews-grid">
+      <div class="review-card glass">
+        <h3>Charlotte Thompson</h3>
+        <p>These are honestly the best bananas I've ever bought! They always arrive perfectly ripe and they taste incredibly fresh compared to the regular supermarket ones.</p>
+      </div>
+      <div class="review-card glass">
+        <h3>James Davies</h3>
+        <p>I love that FreshMart delivers locally sourced produce. The quality is exceptional and knowing it supports fair-trade makes it even better.</p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,98 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 15px;
+  background-color: var(--white);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.product-image-link {
+  position: relative;
+  display: block;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background-color: #f5f5f5;
+  aspect-ratio: 1;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+.sale-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--accent-color);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.product-info {
+  padding: 15px 0 5px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-title {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.product-title a {
+  transition: color 0.2s;
+}
+
+.product-title a:hover {
+  color: var(--primary-color);
+}
+
+.product-price-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.price {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.add-to-cart-btn {
+  margin-top: auto;
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+}
+
+.add-to-cart-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--text-dark);
+}

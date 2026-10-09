@@ -1,0 +1,16 @@
+<div class="product-card glass" *ngIf="product">
+  <a [routerLink]="['/product', product.slug]" class="product-image-link">
+    <img [src]="product.image" [alt]="product.name" class="product-image" />
+    <span class="sale-badge" *ngIf="product.isOnSale">Sale</span>
+  </a>
+  <div class="product-info">
+    <h3 class="product-title">
+      <a [routerLink]="['/product', product.slug]">{{ product.name }}</a>
+    </h3>
+    <div class="product-price-block">
+      <span class="price">${{ product.price.toFixed(2) }}</span>
+      <span class="old-price" *ngIf="product.oldPrice">${{ product.oldPrice.toFixed(2) }}</span>
+    </div>
+    <button class="btn add-to-cart-btn">Add to Cart</button>
+  </div>
+</div>

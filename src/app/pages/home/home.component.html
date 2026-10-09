@@ -1,0 +1,34 @@
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <div class="subtitle">FRESH EVERYDAY</div>
+      <h1 class="title">Fresh Groceries Delivered to Your Door</h1>
+      <h2 class="sub-heading">Shop the latest seasonal produce</h2>
+      <a routerLink="/shop" class="btn">Shop Now <span style="margin-left:8px;">&rarr;</span></a>
+    </div>
+    <div class="hero-image">
+      <div class="discount-badge glass">
+        <span class="discount-text">15% OFF<br>ON FIRST<br>ORDER</span>
+      </div>
+      <img src="https://via.placeholder.com/600x500/EAEAEA/333?text=Fresh+Produce" alt="Hero Image" class="main-img" />
+    </div>
+  </div>
+</section>
+
+<section class="marquee-section">
+  <div class="marquee">
+    <span>Fresh Produce &mdash; Daily Bakery &mdash; Organic Dairy &mdash; </span>
+    <span>Fresh Produce &mdash; Daily Bakery &mdash; Organic Dairy &mdash; </span>
+  </div>
+</section>
+
+<section class="featured-products">
+  <div class="container">
+    <div class="section-header">
+      <h2>Featured Groceries</h2>
+    </div>
+    <div class="products-grid">
+      <app-product-card *ngFor="let product of featuredProducts" [product]="product"></app-product-card>
+    </div>
+  </div>
+</section>

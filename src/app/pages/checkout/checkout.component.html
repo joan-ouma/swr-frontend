@@ -1,0 +1,130 @@
+<div class="breadcrumb">
+  <div class="container">
+    <h1>Checkout</h1>
+    <div class="links">
+      <a routerLink="/">Home</a> / <span>Checkout</span>
+    </div>
+  </div>
+</div>
+
+<section class="checkout-section">
+  <div class="container">
+    <div class="checkout-grid">
+      <!-- Left Column: Forms -->
+      <div class="checkout-forms">
+        <!-- Billing Details -->
+        <div class="form-card glass">
+          <h2>Billing Details</h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="e.g. John" />
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="e.g. Doe" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="john.doe@example.com" />
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="+1234567890" />
+          </div>
+          <div class="form-group">
+            <label>Shipping Address</label>
+            <input type="text" placeholder="123 Toy Street" />
+          </div>
+        </div>
+
+        <!-- Payment Method -->
+        <div class="form-card glass payment-card">
+          <h2>Payment Method</h2>
+          
+          <div class="payment-options">
+            <div class="payment-option" 
+                 [class.active]="selectedPaymentMethod === 'card'"
+                 (click)="selectPaymentMethod('card')">
+              <span class="option-title">Credit / Debit Card</span>
+            </div>
+            <div class="payment-option" 
+                 [class.active]="selectedPaymentMethod === 'mpesa'"
+                 (click)="selectPaymentMethod('mpesa')">
+              <span class="option-title">M-Pesa</span>
+            </div>
+            <div class="payment-option" 
+                 [class.active]="selectedPaymentMethod === 'airtel'"
+                 (click)="selectPaymentMethod('airtel')">
+              <span class="option-title">Airtel Money</span>
+            </div>
+          </div>
+
+          <!-- Dynamic Fields Based on Selection -->
+          <div class="payment-fields" *ngIf="selectedPaymentMethod === 'card'">
+            <div class="form-group">
+              <label>Card Number</label>
+              <input type="text" placeholder="XXXX XXXX XXXX XXXX" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Expiry Date</label>
+                <input type="text" placeholder="MM/YY" />
+              </div>
+              <div class="form-group">
+                <label>CVV</label>
+                <input type="text" placeholder="123" />
+              </div>
+            </div>
+          </div>
+
+          <div class="payment-fields" *ngIf="selectedPaymentMethod === 'mpesa'">
+            <div class="form-group">
+              <label>M-Pesa Phone Number</label>
+              <input type="tel" placeholder="e.g. 0712 345 678" />
+              <p class="payment-hint">Enter your M-Pesa registered number. A prompt will be sent to your phone to complete the payment.</p>
+            </div>
+          </div>
+
+          <div class="payment-fields" *ngIf="selectedPaymentMethod === 'airtel'">
+            <div class="form-group">
+              <label>Airtel Money Number</label>
+              <input type="tel" placeholder="e.g. 0734 567 890" />
+              <p class="payment-hint">Enter your Airtel registered number to authorize the transaction.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Order Summary -->
+      <div class="order-summary glass">
+        <h2>Your Order</h2>
+        <div class="summary-items">
+          <div class="summary-item">
+            <span>Organic Bananas x 1</span>
+            <span>$2.99</span>
+          </div>
+          <!-- More items can go here -->
+        </div>
+        
+        <div class="summary-totals">
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span>$2.99</span>
+          </div>
+          <div class="summary-row">
+            <span>Shipping</span>
+            <span>Free</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <span>$2.99 USD</span>
+          </div>
+        </div>
+        
+        <button class="btn checkout-btn">Complete Checkout</button>
+      </div>
+    </div>
+  </div>
+</section>
